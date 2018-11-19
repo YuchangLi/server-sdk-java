@@ -34,8 +34,8 @@ public class Example {
 
 	@Before
 	public void setUp() throws Exception {
-		String appKey = "8luwapkv8s7pl";
-		String appSecret = "lmkgpHuXezTjV2";
+		String appKey = "n19jmcy5n8no9";
+		String appSecret = "I3KwPNQTxi3";
 		//String api = "http://api.cn.ronghub.com";
 		rongCloud = RongCloud.getInstance(appKey, appSecret);
 	}
@@ -63,9 +63,9 @@ public class Example {
 	public void testRegister() throws Exception {
 
 		UserModel user = new UserModel()
-				.setId("userId1")
-				.setName("username")
-				.setPortrait("http://www.rongcloud.cn/images/logo.png");
+				.setId("1")
+				.setName("liyuchang")
+				.setPortrait("https://oss.youseniu.com/youseniu/201811091924392062_wxtp.jpg");
 
 		TokenResult result = rongCloud.user.register(user);
 
@@ -89,6 +89,21 @@ public class Example {
 
 		assertEquals("200",result.getCode().toString());
 	}
+    /**
+    *
+    * 查询用户信息 方法
+    */
+   @Test
+   public void testUserInfo() throws Exception {
+       UserModel user = new UserModel();
+       user.setId("wr2Uqrkeq2");
+
+       Result result = rongCloud.user.info(user);
+       System.out.println("result:  " + result.toString());
+
+       assertEquals("200",result.getCode().toString());
+   }
+
 	/**
 	 * 测试用户封禁方法（每秒钟限 100 次）
 	 */

@@ -1,17 +1,21 @@
 package io.rong.methods.user;
 
+import java.net.HttpURLConnection;
+import java.net.URLEncoder;
+
 import io.rong.RongCloud;
 import io.rong.methods.user.blacklist.Blacklist;
 import io.rong.methods.user.block.Block;
 import io.rong.methods.user.onlinestatus.OnlineStatus;
-import io.rong.models.*;
+import io.rong.models.CheckMethod;
+import io.rong.models.Result;
 import io.rong.models.response.ResponseResult;
 import io.rong.models.response.TokenResult;
+import io.rong.models.response.UserInfoResult;
 import io.rong.models.user.UserModel;
-import io.rong.util.*;
-
-import java.net.HttpURLConnection;
-import java.net.URLEncoder;
+import io.rong.util.CommonUtil;
+import io.rong.util.GsonUtil;
+import io.rong.util.HttpUtil;
 
 
 /**
@@ -113,6 +117,45 @@ public class User {
 	    
 	    return (ResponseResult) GsonUtil.fromJson(CommonUtil.getResponseByCode(PATH,CheckMethod.UPDATE,HttpUtil.returnResult(conn)), ResponseResult.class);
 	}
+    
+    /**
+                 查询用户信息
+     * url  "/user/info"
+     * docs "http://www.rongcloud.cn/docs/server.html#user_info"
+     *
+     * @param user 用户信息 id name portrait(必传)
+     *
+     * @return ResponseResult
+     **/
+    public Result info(UserModel user) throws Exception {
+        //需要校验的字段
+//        String message = CommonUtil.checkFiled(user,PATH,CheckMethod.UPDATE);
+//        if(null != message){
+//            return (ResponseResult)GsonUtil.fromJson(message,ResponseResult.class);
+//        }
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("&userId=").append(URLEncoder.encode(user.id.toString(), UTF8));
+        
+        if (user.name != null) {
+            sb.append("&name=").append(URLEncoder.encode(user.name.toString(), UTF8));
+        }
+        
+        if (user.portrait != null) {
+            sb.append("&portraitUri=").append(URLEncoder.encode(user.portrait.toString(), UTF8));
+        }
+        String body = sb.toString();
+        if (body.indexOf("&") == 0) {
+            body = body.substring(1, body.length());
+        }
+        
+        HttpURLConnection conn = HttpUtil.CreatePostHttpConnection(rongCloud.getApiHostType(), appKey, appSecret,
+                "/user/info.json", "application/x-www-form-urlencoded");
+        HttpUtil.setBodyParameter(body, conn);
+        String resultJson = CommonUtil.getResponseByCode(PATH,CheckMethod.UPDATE,HttpUtil.returnResult(conn));
+        return (UserInfoResult) GsonUtil.fromJson(resultJson, UserInfoResult.class);
+    }
+
 
 
 }
