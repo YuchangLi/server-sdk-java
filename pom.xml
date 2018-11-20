@@ -167,4 +167,15 @@
             </plugin>
         </plugins>
     </build>
+  
+  <distributionManagement>
+    <repository>
+      <id>youseniu-releases</id>
+      <url>http://ysnnexus.liyuchang.xin/repository/maven-releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>youseniu-snapshots</id>
+      <url>http://ysnnexus.liyuchang.xin/repository/maven-snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
 </project>
