@@ -11,10 +11,25 @@ public class UserInfoResult extends Result {
   String id;
   // 用户名
   String userName;
+  // 公司名
+  String companyName;
   // 用户头像
   String userPortrait;
   // 用户注册时间
   String createTime;
+
+
+  /**
+   * @return companyName
+   */
+  public String getCompanyName() {
+    return companyName;
+  }
+
+
+  public void setCompanyName(String companyName) {
+    this.companyName = companyName;
+  }
 
 
   /**

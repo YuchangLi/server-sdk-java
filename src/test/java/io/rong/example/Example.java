@@ -63,7 +63,7 @@ public class Example {
 	public void testRegister() throws Exception {
 
 		UserModel user = new UserModel()
-				.setId("1")
+				.setId("userid_id")
 				.setName("liyuchang")
 				.setPortrait("https://oss.youseniu.com/youseniu/201811091924392062_wxtp.jpg");
 
@@ -409,7 +409,7 @@ public class Example {
 	 * */
 	@Test
 	public void testRemoveHistory() throws Exception {
-		ResponseResult result = rongCloud.message.history.remove("2018030210");
+		ResponseResult result = rongCloud.message.history.remove("2018112011");
 		System.out.println("remove history  message:  " + result.toString());
 
 		assertEquals("200",result.getCode().toString());
