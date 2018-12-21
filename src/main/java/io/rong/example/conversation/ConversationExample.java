@@ -2,10 +2,8 @@ package io.rong.example.conversation;
 
 import io.rong.RongCloud;
 import io.rong.methods.conversation.Conversation;
-import io.rong.models.response.ConversationNotificationResult;
-import io.rong.models.response.ResponseResult;
 import io.rong.models.conversation.ConversationModel;
-import io.rong.util.CodeUtil;
+import io.rong.models.response.ResponseResult;
 import io.rong.util.CodeUtil.ConversationType;
 
 /**
@@ -27,7 +25,7 @@ public class ConversationExample {
     /**
      * 自定义api地址
      * */
-    private static final String api = "http://api.cn.ronghub.com";
+    // private static final String api = "http://api.cn.ronghub.com";
 
     public static void main(String[] args) throws Exception {
 

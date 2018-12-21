@@ -1,7 +1,6 @@
 package io.rong.models.response;
 
 import io.rong.models.Result;
-import io.rong.models.User;
 import io.rong.models.user.UserModel;
 import io.rong.util.GsonUtil;
 

@@ -1,18 +1,17 @@
 package io.rong.methods.user.blacklist;
 
+import java.net.HttpURLConnection;
+import java.net.URLEncoder;
+
 import io.rong.RongCloud;
-import io.rong.models.response.BlackListResult;
-import io.rong.models.response.ChatroomUserQueryResult;
-import io.rong.models.response.ResponseResult;
-import io.rong.models.Result;
 import io.rong.models.CheckMethod;
+import io.rong.models.Result;
+import io.rong.models.response.BlackListResult;
+import io.rong.models.response.ResponseResult;
 import io.rong.models.user.UserModel;
 import io.rong.util.CommonUtil;
 import io.rong.util.GsonUtil;
 import io.rong.util.HttpUtil;
-
-import java.net.HttpURLConnection;
-import java.net.URLEncoder;
 /**
  *
  * 用户黑名单服务

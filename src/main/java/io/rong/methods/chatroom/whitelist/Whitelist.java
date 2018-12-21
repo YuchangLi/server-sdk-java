@@ -1,16 +1,6 @@
 package io.rong.methods.chatroom.whitelist;
 
 import io.rong.RongCloud;
-import io.rong.exception.ParamException;
-import io.rong.models.CheckMethod;
-import io.rong.models.response.ResponseResult;
-import io.rong.models.CommonConstrants;
-import io.rong.util.CommonUtil;
-import io.rong.util.GsonUtil;
-import io.rong.util.HttpUtil;
-
-import java.net.HttpURLConnection;
-import java.net.URLEncoder;
 /**
  *
  * 聊天室用户白名单服务
@@ -19,8 +9,8 @@ import java.net.URLEncoder;
  * @author RongCloud
  * */
 public class Whitelist {
-    private static final String UTF8 = "UTF-8";
-    private static final String PATH = "chatroom/whitelist";
+//    private static final String UTF8 = "UTF-8";
+//    private static final String PATH = "chatroom/whitelist";
     private String appKey;
     private String appSecret;
     private RongCloud rongCloud;
@@ -40,5 +30,23 @@ public class Whitelist {
         this.appSecret = appSecret;
         this.message = new Messages(appKey,appSecret);
         this.user = new User(appKey,appSecret);
+    }
+    /**
+     * @return appKey
+     */
+    public String getAppKey() {
+      return appKey;
+    }
+    public void setAppKey(String appKey) {
+      this.appKey = appKey;
+    }
+    /**
+     * @return appSecret
+     */
+    public String getAppSecret() {
+      return appSecret;
+    }
+    public void setAppSecret(String appSecret) {
+      this.appSecret = appSecret;
     }
 }

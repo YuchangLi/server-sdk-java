@@ -1,5 +1,14 @@
 package io.rong.example;
 
+import static org.junit.Assert.assertEquals;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.Reader;
+
+import org.junit.Before;
+import org.junit.Test;
+
 import io.rong.RongCloud;
 import io.rong.messages.TxtMessage;
 import io.rong.messages.VoiceMessage;
@@ -7,26 +16,34 @@ import io.rong.models.Result;
 import io.rong.models.group.GroupMember;
 import io.rong.models.group.GroupModel;
 import io.rong.models.group.UserGroup;
-import io.rong.models.message.*;
-import io.rong.models.response.*;
+import io.rong.models.message.BroadcastMessage;
+import io.rong.models.message.ChatroomMessage;
+import io.rong.models.message.GroupMessage;
+import io.rong.models.message.MentionMessage;
+import io.rong.models.message.MentionMessageContent;
+import io.rong.models.message.MentionedInfo;
+import io.rong.models.message.PrivateMessage;
+import io.rong.models.message.RecallMessage;
+import io.rong.models.message.SystemMessage;
+import io.rong.models.message.TemplateMessage;
+import io.rong.models.response.BlackListResult;
+import io.rong.models.response.BlockUserResult;
+import io.rong.models.response.CheckOnlineResult;
+import io.rong.models.response.GroupUserQueryResult;
+import io.rong.models.response.HistoryMessageResult;
+import io.rong.models.response.ListGagGroupUserResult;
+import io.rong.models.response.ListWordfilterResult;
+import io.rong.models.response.ResponseResult;
+import io.rong.models.response.TokenResult;
 import io.rong.models.sensitiveword.SensitiveWordModel;
 import io.rong.models.user.UserModel;
 import io.rong.util.GsonUtil;
-import org.junit.Before;
-import org.junit.Test;
-
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-
-import static org.junit.Assert.assertEquals;
 
 /**
  * 一些api的调用示例和测试
  */
 public class Example {
-	private static final String JSONFILE = Example.class.getClassLoader().getResource("jsonsource").getPath()+"/";
+//	private static final String JSONFILE = Example.class.getClassLoader().getResource("jsonsource").getPath()+"/";
 	private RongCloud rongCloud ;
 	private static final TxtMessage txtMessage = new TxtMessage("hello", "helloExtra");
 	private static final VoiceMessage voiceMessage = new VoiceMessage("hello", "helloExtra", 20L);

@@ -1,5 +1,9 @@
 package io.rong.example.message;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.Reader;
+
 import io.rong.RongCloud;
 import io.rong.messages.CustomTxtMessage;
 import io.rong.messages.TxtMessage;
@@ -10,15 +14,20 @@ import io.rong.methods.message.discussion.Discussion;
 import io.rong.methods.message.group.Group;
 import io.rong.methods.message.history.History;
 import io.rong.methods.message.system.MsgSystem;
-import io.rong.models.message.*;
+import io.rong.models.message.BroadcastMessage;
+import io.rong.models.message.ChatroomMessage;
+import io.rong.models.message.DiscussionMessage;
+import io.rong.models.message.GroupMessage;
+import io.rong.models.message.MentionMessage;
+import io.rong.models.message.MentionMessageContent;
+import io.rong.models.message.MentionedInfo;
+import io.rong.models.message.PrivateMessage;
+import io.rong.models.message.RecallMessage;
+import io.rong.models.message.SystemMessage;
+import io.rong.models.message.TemplateMessage;
 import io.rong.models.response.HistoryMessageResult;
 import io.rong.models.response.ResponseResult;
 import io.rong.util.GsonUtil;
-
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
 
 
 /**
@@ -28,7 +37,7 @@ import java.io.Reader;
  * @version 3.0.0
  */
 public class MessageExample {
-    private static final String JSONFILE = MessageExample.class.getClassLoader().getResource("jsonsource").getPath()+"/";
+//    private static final String JSONFILE = MessageExample.class.getClassLoader().getResource("jsonsource").getPath()+"/";
     /**
      * 此处替换成您的appKey
      * */
@@ -43,7 +52,7 @@ public class MessageExample {
     /**
      * 自定义api地址
      * */
-    private static final String api = "http://api.cn.ronghub.com";
+    // private static final String api = "http://api.cn.ronghub.com";
 
     public static void main(String[] args) throws Exception {
 

@@ -73,7 +73,7 @@ public class Ban {
      * @return ListGagChatroomUserResult
      **/
     public ListGagChatroomUserResult getList() throws Exception {
-        StringBuilder sb = new StringBuilder();
+//        StringBuilder sb = new StringBuilder();
 
         HttpURLConnection conn = HttpUtil.CreatePostHttpConnection(rongCloud.getApiHostType(), appKey, appSecret, "/chatroom/user/ban/query.json", "application/x-www-form-urlencoded");
 

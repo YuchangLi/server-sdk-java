@@ -1,15 +1,17 @@
 package io.rong.util;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
-
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.JarURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Enumeration;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
+
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 
 /**
  * Json公共服务
@@ -17,7 +19,7 @@ import java.util.jar.JarFile;
  * @author RongCloud
  */
 public class JsonUtil {
-    private static final String JSONFILE = JsonUtil.class.getClassLoader().getResource("jsonsource").getPath()+"/";
+//    private static final String JSONFILE = JsonUtil.class.getClassLoader().getResource("jsonsource").getPath()+"/";
 
     /**
      * 获取JsonObject
@@ -28,6 +30,7 @@ public class JsonUtil {
      * @return JsonObject
      * @throws IOException
      **/
+    @SuppressWarnings("unchecked")
     public static <T> T getJsonObject(String path,String jsonName) throws IOException {
         BufferedReader reader = null ;
         try {

@@ -4,8 +4,9 @@ import io.rong.RongCloud;
 import io.rong.methods.chatroom.Chatroom;
 import io.rong.models.chatroom.ChatroomMember;
 import io.rong.models.chatroom.ChatroomModel;
-import io.rong.models.response.*;
-import java.io.Reader;
+import io.rong.models.response.ChatroomUserQueryResult;
+import io.rong.models.response.CheckChatRoomUserResult;
+import io.rong.models.response.ResponseResult;
 
 public class ChatroomExample {
     /**
@@ -19,7 +20,7 @@ public class ChatroomExample {
     /**
      * 自定义api地址
      * */
-    private static final String api = "http://api.cn.ronghub.com";
+    // private static final String api = "http://api.cn.ronghub.com";
 
 
     public static void main(String[] args) throws Exception {
@@ -30,7 +31,7 @@ public class ChatroomExample {
 
         Chatroom chatroom = rongCloud.chatroom;
 
-        Reader reader = null;
+//        Reader reader = null;
         /**
          * API 文档: http://www.rongcloud.cn/docs/server_sdk_api/chatroom/chatroom.html#create
          *

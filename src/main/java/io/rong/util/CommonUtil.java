@@ -1,18 +1,21 @@
 package io.rong.util;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
-import io.rong.models.response.BlackListResult;
-import io.rong.models.response.UserList;
-import io.rong.models.response.WhiteListResult;
-import io.rong.models.user.UserModel;
-import org.apache.commons.lang3.StringUtils;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+
+import org.apache.commons.lang3.StringUtils;
+
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+
+import io.rong.models.response.BlackListResult;
+import io.rong.models.response.UserList;
+import io.rong.models.response.WhiteListResult;
+import io.rong.models.user.UserModel;
 
 /**
  * 属性校验公共服务
@@ -96,7 +99,7 @@ public class CommonUtil {
                         //获取字段的具体校验规则
                         JSONObject object =  entity.getJSONObject(nameTemp);
                         if(object.containsKey("require")){
-                            Boolean must = (Boolean)object.getJSONObject("require").get("must");
+//                            Boolean must = (Boolean)object.getJSONObject("require").get("must");
                             if(m.invoke(model)  instanceof String){
                                 String value = (String) m.invoke(model);
                                 if(StringUtils.isBlank(value)){
@@ -192,7 +195,7 @@ public class CommonUtil {
     public static String checkParam(String checkFiled,Object value,String path,String method){
         try {
             String code = "200";
-            boolean flag = false;
+//            boolean flag = false;
             Integer max = 64;
             String type = "";
             String  apiPath = path;
@@ -214,7 +217,7 @@ public class CommonUtil {
                 if(checkFiled.equals(key)){
                     JSONObject object =  entity.getJSONObject(checkFiled);
                     if(object.containsKey("require")){
-                        Boolean must = (Boolean)object.getJSONObject("require").get("must");
+//                        Boolean must = (Boolean)object.getJSONObject("require").get("must");
                         if(value  instanceof String){
                             if(StringUtils.isBlank(String.valueOf(value))){
                                 code = (String)object.getJSONObject("require").get("invalid");

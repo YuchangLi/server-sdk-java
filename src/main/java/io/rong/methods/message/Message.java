@@ -11,9 +11,9 @@ import io.rong.methods.message.system.MsgSystem;
 
 public class Message {
 
-	private static final String UTF8 = "UTF-8";
-	private static final String PATH = "message";
-	private static String method = "";
+//	private static final String UTF8 = "UTF-8";
+//	private static final String PATH = "message";
+//	private static String method = "";
 	private String appKey;
 	private String appSecret;
 	public  Private msgPrivate;
@@ -49,5 +49,27 @@ public class Message {
 		this.system = new MsgSystem(appKey,appSecret);
 
 	}
+
+  /**
+   * @return appKey
+   */
+  public String getAppKey() {
+    return appKey;
+  }
+
+  public void setAppKey(String appKey) {
+    this.appKey = appKey;
+  }
+
+  /**
+   * @return appSecret
+   */
+  public String getAppSecret() {
+    return appSecret;
+  }
+
+  public void setAppSecret(String appSecret) {
+    this.appSecret = appSecret;
+  }
 	 
 }

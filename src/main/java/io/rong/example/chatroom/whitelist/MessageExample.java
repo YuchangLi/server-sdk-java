@@ -20,7 +20,7 @@ public class MessageExample {
     /**
      * 自定义api地址
      * */
-    private static final String api = "http://api.cn.ronghub.com";
+//    // private static final String api = "http://api.cn.ronghub.com";
 
     public static void main(String[] args) throws Exception {
         RongCloud rongCloud = RongCloud.getInstance(appKey, appSecret);
@@ -50,7 +50,7 @@ public class MessageExample {
          * 添加聊天室全局禁言
          * */
 
-        ResponseResult removeResult = whitelist.message.remove(messageType);
+//        ResponseResult removeResult = whitelist.message.remove(messageType);
         System.out.println("remove whitelist:  " + addResult.toString());
 
        }

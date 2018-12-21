@@ -1,6 +1,5 @@
 package io.rong.models.user;
 
-import io.rong.methods.user.User;
 import io.rong.util.GsonUtil;
 
 /**

@@ -1,16 +1,15 @@
 package io.rong.methods.conversation;
 
+import java.net.HttpURLConnection;
+import java.net.URLEncoder;
+
 import io.rong.RongCloud;
-import io.rong.models.*;
+import io.rong.models.CheckMethod;
 import io.rong.models.conversation.ConversationModel;
-import io.rong.models.response.ConversationNotificationResult;
 import io.rong.models.response.ResponseResult;
 import io.rong.util.CommonUtil;
 import io.rong.util.GsonUtil;
 import io.rong.util.HttpUtil;
-
-import java.net.HttpURLConnection;
-import java.net.URLEncoder;
 /**
  *
  * 会话消息免打扰服务
@@ -22,7 +21,7 @@ public class Conversation {
 
     private static final String UTF8 = "UTF-8";
     private static final String PATH = "conversation";
-    private static String method = "";
+//    private static String method = "";
     private String appKey;
     private String appSecret;
     private RongCloud rongCloud;

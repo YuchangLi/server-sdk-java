@@ -6,8 +6,6 @@ import io.rong.models.response.ListWordfilterResult;
 import io.rong.models.response.ResponseResult;
 import io.rong.models.sensitiveword.SensitiveWordModel;
 
-import static org.junit.Assert.assertEquals;
-
 public class SensitiveExample {
     /**
      * 此处替换成您的appKey
@@ -20,7 +18,7 @@ public class SensitiveExample {
     /**
      * 自定义api地址
      * */
-    private static final String api = "http://api.cn.ronghub.com";
+    // private static final String api = "http://api.cn.ronghub.com";
 
     public static void main(String[] args) throws Exception {
 

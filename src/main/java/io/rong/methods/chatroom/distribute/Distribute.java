@@ -1,16 +1,15 @@
 package io.rong.methods.chatroom.distribute;
 
+import java.net.HttpURLConnection;
+import java.net.URLEncoder;
+
 import io.rong.RongCloud;
 import io.rong.models.CheckMethod;
 import io.rong.models.chatroom.ChatroomModel;
-import io.rong.models.response.ChatroomUserQueryResult;
 import io.rong.models.response.ResponseResult;
 import io.rong.util.CommonUtil;
 import io.rong.util.GsonUtil;
 import io.rong.util.HttpUtil;
-
-import java.net.HttpURLConnection;
-import java.net.URLEncoder;
 
 public class Distribute {
     private static final String UTF8 = "UTF-8";
