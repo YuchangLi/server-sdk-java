@@ -51,8 +51,8 @@ public class Example {
 
 	@Before
 	public void setUp() throws Exception {
-		String appKey = "n19jmcy5n8no9";
-		String appSecret = "I3KwPNQTxi3";
+		String appKey = "tdrvipkstxtg5";
+		String appSecret = "Ew8WRsDxbV";
 		//String api = "http://api.cn.ronghub.com";
 		rongCloud = RongCloud.getInstance(appKey, appSecret);
 	}
@@ -64,7 +64,7 @@ public class Example {
 	@Test
 	public void testCheckOnline() throws Exception {
 		UserModel user = new UserModel();
-		user.setId("userId");
+		user.setId("20033");
 
 		CheckOnlineResult result = rongCloud.user.onlineStatus.check(user);
 		System.out.println("checkOnline:  " + result.toString());
@@ -298,7 +298,6 @@ public class Example {
 	 * */
 	@Test
 	public void testSendPrivate() throws Exception {
-		Reader reader = null ;
 		PrivateMessage  privateMessage = new PrivateMessage()
 				.setSenderId("userId")
 				.setTargetId(targetIds)
